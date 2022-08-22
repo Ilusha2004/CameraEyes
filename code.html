@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Убираем движение в веб-камере</title>
+  <!-- Подключаем таблицу стилей для оформления -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Подключаем библиотеку TensorFlow.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <h1>Убираем движение в веб-камере</h1>
+  <p>Чтобы всё работало как нужно, после запуска не входите в кадр несколько секунд и отойдите от камеры хотя бы на
+    полтора-два метра.</p>
+  <p>Иногда будут видны артефакты при движении в кадре, но это нормально — у нас просто демонстрация возможностей, а не
+    полноценный инструмент. Но при желании вы вполне можете это исправить.</p>
+  <!-- Раздел с веб-камерой -->
+  <section id="demos">
+    <!-- Делаем отдельный блок -->
+    <div id="liveView" class="webcam">
+      <!-- Рисуем кнопку -->
+      <button id="webcamButton">Включить камеру</button>
+      <!-- Показываем сначала исходное видео с камеры -->
+      <video id="webcam" autoplay></video>
+    </div>
+  </section>
+  <!-- Подключаем Glitch-кнопку — специальное окошко, куда можно сразу вывести результат работы нейросети -->
+  <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+  <!-- Указываем путь к Glitсh-скрипту -->
+  <script src="https://button.glitch.me/button.js"></script>
+  <!-- Загружаем нейросеть, обученную распознавать людей в кадре -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0"></script>
+  <!-- Как всё будет готово — подключаем скрипт, который будет обрабатывать видео -->
+  <script src="http://thecode.local/wp-content/uploads/2020/02/script.js" defer></script>
+</body>
+
+</html>
